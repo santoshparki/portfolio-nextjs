@@ -309,7 +309,7 @@ textarea {
     linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(115deg, rgba(7, 19, 38, 0.92), rgba(16, 35, 63, 0.72)),
-    url("/images/profile.jpg") center right / cover;
+    var(--hero-bg) center right / cover;
   background-size: 42px 42px, 42px 42px, auto, cover;
   color: #ffffff;
   min-height: 100vh;

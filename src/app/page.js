@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from "react";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const asset = (path) => `${basePath}${path}`;
+
 const skillTabs = {
   frontend: [
     { icon: "fa-code", title: "HTML", text: "Semantic, accessible page structure.", filter: "html" },
@@ -29,7 +32,7 @@ const skillTabs = {
 const projects = [
   {
     title: "Personal Portfolio",
-    image: "/images/project1.png",
+    image: asset("/images/project1.png"),
     alt: "Portfolio Website",
     description:
       "Designed and built a responsive personal portfolio to present my skills, education, projects, CV, and contact options in one polished website.",
@@ -38,7 +41,7 @@ const projects = [
   },
   {
     title: "United Car Removal",
-    image: "/images/project2.png",
+    image: asset("/images/project2.png"),
     alt: "United Car Removal Website",
     description:
       "Built a dynamic WordPress website using Elementor, ACF, CPT, and reusable templates so service and location pages can be managed efficiently.",
@@ -48,7 +51,7 @@ const projects = [
   },
   {
     title: "Stock Price Prediction",
-    image: "/images/project3.png",
+    image: asset("/images/project3.png"),
     alt: "Stock Price Prediction Project",
     description:
       "Developed a Python and machine learning research project to analyze historical stock data and explore forecasting methods for market trends.",
@@ -155,7 +158,7 @@ export default function HomePage() {
 
   return (
     <>
-      <header className="hero" id="home">
+      <header className="hero" id="home" style={{ "--hero-bg": `url("${asset("/images/profile.jpg")}")` }}>
         <nav className="navbar" aria-label="Primary navigation">
           <a href="#home" className="logo logo-badge" onClick={() => setMenuOpen(false)}>
             SP
@@ -210,7 +213,7 @@ export default function HomePage() {
               <a href="#contact" className="btn btn-outline">
                 <i className="fa-solid fa-paper-plane" /> Contact Me
               </a>
-              <a href="/Santosh_kumar_Parki.pdf" className="btn btn-light" download>
+              <a href={asset("/Santosh_kumar_Parki.pdf")} className="btn btn-light" download>
                 <i className="fa-solid fa-download" /> Download CV
               </a>
             </div>
@@ -226,7 +229,7 @@ export default function HomePage() {
           </div>
 
           <div className="hero-image" aria-label="Santosh Parki profile">
-            <img src="/images/profile.jpg" alt="Santosh Parki" className="main-img" />
+            <img src={asset("/images/profile.jpg")} alt="Santosh Parki" className="main-img" />
             <div className="profile-card">
               <span className="status-dot" />
               <div>
@@ -235,7 +238,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="grad-card">
-              <img src="/images/graduation.jpg" alt="Graduation ceremony" className="grad-img" />
+              <img src={asset("/images/graduation.jpg")} alt="Graduation ceremony" className="grad-img" />
               <p>Graduation 2023</p>
             </div>
           </div>
