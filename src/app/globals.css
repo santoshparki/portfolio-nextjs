@@ -328,11 +328,6 @@ textarea {
   right: 0;
 }
 
-.hero::before {
-  content: "";
-  display: none;
-}
-
 .hero-content {
   align-items: center;
   display: grid;
@@ -1583,21 +1578,7 @@ footer {
   }
 
   .hero {
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(110deg, rgba(7, 19, 38, 0.92) 0%, rgba(16, 35, 63, 0.78) 58%, rgba(16, 35, 63, 0.52) 100%);
-    background-size: 42px 42px, 42px 42px, auto;
     padding: 112px 0 56px;
-  }
-
-  .hero::before {
-    background: var(--hero-bg) 100% 72px / auto 56vh no-repeat;
-    display: block;
-    inset: 0;
-    opacity: 0.42;
-    position: absolute;
-    z-index: 0;
   }
 
   .hero-content {
